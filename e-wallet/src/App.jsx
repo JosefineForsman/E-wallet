@@ -1,15 +1,31 @@
-
 import './App.scss';
-import AddCard from './views/AddCard'
-import Home from './views/Home'
+import Home from './views/Home';
+import AddCard from './views/AddCard';
+import { useState } from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
-import CardForm from './components/CardForm/CardForm';
+
+
 
 function App() {
+  const [heading, setHeading] = useState('E-WALLET');
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home setHeading= {setHeading}/>,
+      error: <Error/>
+    },
+    {
+      path: '/addcard',
+      element: <AddCard setHeading= {setHeading}/>,
+      error:<Error/>
+    }
+  ])
 
   return (
     <div className="App">
-      <h1>App</h1>
+      <Header heading = {heading}/>
+      <RouterProvider router = { router } />
     </div>
   )
 }

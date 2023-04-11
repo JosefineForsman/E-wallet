@@ -1,9 +1,9 @@
 import './Header.scss';
 
-function Header(){
+function Header(props){
 
     return(
-        <div>Header</div>
+        <header className='header'>{props.heading}</header>
     )
 }
 export default Header;
