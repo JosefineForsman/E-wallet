@@ -5,10 +5,8 @@ import { useState } from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 
-
-
 function App() {
-  const [heading, setHeading] = useState('E-WALLET');
+  const [heading, setHeading] = useState('');
   const router = createBrowserRouter([
     {
       path: '/',

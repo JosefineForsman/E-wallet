@@ -1,10 +1,26 @@
 .Card{
-height: 241px;
-width: 382px;
-left: 16px;
-top: 138px;
+min-height: 241px;
+min-width: 382px;
 border-radius: 4px;
 background: lightgray;
+display: flex;
+position: sticky;
+flex-direction: column;
+transition: .2s;
+
+&:first-child{
+    margin-bottom: 100px;
+    transform:none;
+}
+&:first-child:hover{
+    transform:none;
+}
+&:hover{
+    transform: translateY(-1rem);
+}
+&:hover~.Card{
+ transform: translateY(100px)
+}
 
 &__icon-continer{
     display: flex;

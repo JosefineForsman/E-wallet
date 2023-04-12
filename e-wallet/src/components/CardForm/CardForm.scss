@@ -1,4 +1,40 @@
-form{
+.form{
     display: flex;
     flex-direction: column;
+    &__input{
+        margin-top:1rem;
+        height: 56px;
+        width: 382px;
+        border-radius: 8px;
+        border: 1px solid black
+    }
+    &__input--small{
+        height: 56px;
+        width: 175px;
+    }
+    &__label{
+        margin-top:5px;
+        font-family: PT Mono;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 13px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: uppercase;
+        color:#000000CC;
+    }
+    &__container{
+        display: flex;
+        gap:1.5rem;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+    }
+.button{
+    text-transform: uppercase;
+    background-color: black;
+    color:white;
+
+}
 }
