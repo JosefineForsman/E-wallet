@@ -12,7 +12,7 @@ function AddCard(props){
     const [name, setName] = useState('FIRSTNAME LASTNAME')
     const [validThru, setValidThru] = useState('MM/YY');
     const [ccv, setCcv] = useState();
-    const [vendor, setVendor] = useState();
+    const [vendor, setVendor] = useState('bitcoin');
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -21,16 +21,20 @@ function AddCard(props){
         props.setHeading('ADD A NEW BANK CARD');
 
     }, [])
-
+    
     function addCard(){
-        
-        const newCard = {
+        // splittar text strängen från value i option och lägger i en array.
+        let newVendor = vendor.split(' ');
+        console.log(newVendor);
+        const newCard ={
             id: cardNumber,
             cardNumber: cardNumber,
             name: name,
             validThru: validThru,
             ccv: ccv,
-            vendor: vendor
+            vendor: newVendor[0],
+            img: newVendor[1],
+            color: newVendor[2]
         }
         dispatch(addNewCard(newCard));
         navigate('/')

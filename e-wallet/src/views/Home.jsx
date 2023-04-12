@@ -1,8 +1,5 @@
-import Header from '../components/Header/Header';
-import Card from '../components/Card/Card';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import './Home.scss';
 import CardStack from '../components/CardStack/CardStack';
 

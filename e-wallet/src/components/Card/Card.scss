@@ -1,6 +1,10 @@
 .Card{
-min-height: 241px;
-min-width: 382px;
+    height: 241px;
+    width: 382px;
+    left: 16px;
+    top: 138px;
+    border-radius: 8px;
+    
 border-radius: 4px;
 background: lightgray;
 display: flex;
@@ -12,9 +16,7 @@ transition: .2s;
     margin-bottom: 100px;
     transform:none;
 }
-&:first-child:hover{
-    transform:none;
-}
+
 &:hover{
     transform: translateY(-1rem);
 }

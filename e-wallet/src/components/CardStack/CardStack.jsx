@@ -7,7 +7,7 @@ function CardStack(){
     console.log(cards)
     
     const cartComponents = cards.map((card)=>{
-        return( <Card cardNumber={card.cardNumber} name={card.name } validThru = {card.validThru} key={card.id}/>)
+        return( <Card card= {card} key={card.id}/>)
     })
     return(
         
