@@ -4,4 +4,10 @@ function addNewCard(value){
         payload: value
     }
 }
-export { addNewCard }
+function removeCard(value){
+    return{
+        type:'REMOVE_CARD',
+        payload: value
+    }
+}
+export { addNewCard, removeCard }

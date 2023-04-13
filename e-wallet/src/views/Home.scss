@@ -1,9 +1,7 @@
 .button{
-    margin-top:3rem;
+    margin-top:10rem;
     height: 80px;
     width: 382px;
-    left: 16px;
-    top: 799px;
     border-radius: 8px;
     font-family: PT Mono;
     font-size: 22px;
@@ -14,4 +12,12 @@
     text-transform: uppercase;
     background-color: white;
     
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

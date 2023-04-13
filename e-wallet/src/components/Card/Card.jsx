@@ -1,18 +1,38 @@
 import './Card.scss';
 import Chip from '../../assets/chip-dark.svg';
+import { removeCard } from '../../actions/cardAction';
+import { useDispatch } from 'react-redux';
 
 function Card(props){
-  console.log(props.card)
-  // Behöver denna if-sats för att kunna loopa ut färger på korten.. 
-  //men visar inte kortet i add new bank card?
-  //Lägga till färger till texten i value i option så att allt syns.
-  if(props.card){
+    const dispatch = useDispatch();
+
+    function remove(){
+        dispatch(removeCard(props.card.id));
+    }
+    function changeColor(){
+        switch (props.card.vendor) {
+            case 'bitcoin':
+                return '#FFAE34'
+            case 'ninja':
+                return '#222222'
+            case 'blockchain':
+                return '#8B58F9'
+            case 'evil':
+                return '#F33355'
+            default:
+                break;
+        }
+    }
+    if(props.card){
+
+      console.log(props.card.vendor);
       return(
-          <section className='Card' style={{ backgroundColor: `${props.card.color}`}}>
+          <section className='Card' style={{ backgroundColor: changeColor()}}>
               <article className='Card__icon-continer'>
                   <img src={Chip} alt="" />
                   <article className='Card__icon'>
-                      <img src={props.card.img} />
+                      <img src={`../src/assets/${props.card.vendor}.svg`} />
+                        <figure className='Card__remove-btn' onClick= { remove }>X</figure>
                   </article>
               </article>
               <article className='Card__information'>

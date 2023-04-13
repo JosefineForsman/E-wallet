@@ -5,24 +5,24 @@
     top: 138px;
     border-radius: 8px;
     
-border-radius: 4px;
-background: lightgray;
-display: flex;
-position: sticky;
-flex-direction: column;
-transition: .2s;
-
-&:first-child{
-    margin-bottom: 100px;
-    transform:none;
-}
-
-&:hover{
-    transform: translateY(-1rem);
-}
-&:hover~.Card{
- transform: translateY(100px)
-}
+    border-radius: 4px;
+    background: lightgray;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:-9rem;
+    // position: sticky;
+    // transform: translateY(-5rem);
+    // transition: .2s;
+    
+    &:first-child{
+        // margin-bottom: 400px;
+        // transform:none;
+    }
+    
+    &:hover{
+        transform: translateY(2rem);
+        transform: .2s;
+    }
 
 &__icon-continer{
     display: flex;
@@ -38,6 +38,7 @@ transition: .2s;
     letter-spacing: 0.03em;
     text-align: left;
     margin:0;
+    color:white;
 }
 &__label-name{
     font-family: PT Mono;
@@ -50,6 +51,7 @@ transition: .2s;
     text-transform: uppercase;
     padding: 0.4rem;
     margin-top:1rem;
+    color:white;
 }
 &__name{
     font-family: PT Mono;
@@ -58,6 +60,7 @@ transition: .2s;
     text-align: left;
     padding: 0.4rem;
     margin:0;
+    color:white;
 }
 &__information-container{
     display: flex;
@@ -68,5 +71,17 @@ transition: .2s;
 &__name-container{
     display: flex;
     justify-content: space-between;
+}
+&__remove-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width:1.5rem;
+    height:1.5rem;
+    background-color: red;
+    margin-top:-2rem;
+    margin-right:-1rem;
+
 }
 }

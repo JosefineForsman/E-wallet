@@ -9,10 +9,12 @@ function CardStack(){
     const cartComponents = cards.map((card)=>{
         return( <Card card= {card} key={card.id}/>)
     })
+
+
     return(
         
         <section className='card-container'>
-            {cartComponents}
+            <ul className='card-container__components'>{cartComponents}</ul>
         </section>
     )
 }

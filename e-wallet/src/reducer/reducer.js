@@ -9,6 +9,11 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 cards: [...state.cards, action.payload]
             }
+        case 'REMOVE_CARD':
+            return{
+                ...state,
+                cards: state.cards.filter(i=> i.id !== action.payload)
+            }
         default:
             return state;
     }
