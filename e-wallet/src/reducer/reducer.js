@@ -1,5 +1,6 @@
 const initialState = {
-    cards:[]
+    cards:[],
+    activeCard: {}
 }
 
 const reducer = (state = initialState, action)=>{
@@ -14,6 +15,11 @@ const reducer = (state = initialState, action)=>{
                 ...state,
                 cards: state.cards.filter(i=> i.id !== action.payload)
             }
+        case 'ACTIVE_CARD':
+        return{
+            ...state,
+            activeCard: state.activeCard = action.payload
+        }
         default:
             return state;
     }

@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import './Home.scss';
 import CardStack from '../components/CardStack/CardStack';
 import Card from '../components/Card/Card';
+import ActiveCard from '../components/ActiveCard/ActiveCard';
+import { useState } from 'react';
 
 function Home(props){
     const navigate = useNavigate();
@@ -17,7 +19,7 @@ function Home(props){
 
     return(
         <section className='main'>
-        <Card />
+        <ActiveCard />
          <CardStack/>
          <button className='button' onClick={ goToAddCard }>Add a new card</button>
         </section>

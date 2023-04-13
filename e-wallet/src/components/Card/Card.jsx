@@ -1,7 +1,8 @@
 import './Card.scss';
 import Chip from '../../assets/chip-dark.svg';
-import { removeCard } from '../../actions/cardAction';
+import { removeCard, activeCard } from '../../actions/cardAction';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 function Card(props){
     const dispatch = useDispatch();
@@ -23,11 +24,17 @@ function Card(props){
                 break;
         }
     }
+    function saveActiveCard(){
+        const active= props.card
+        dispatch(activeCard(active))
+
+    }
     if(props.card){
 
       console.log(props.card.vendor);
       return(
-          <section className='Card' style={{ backgroundColor: changeColor()}}>
+
+          <section className='Card' onClick={ saveActiveCard }style={{ backgroundColor: changeColor()}}>
               <article className='Card__icon-continer'>
                   <img src={Chip} alt="" />
                   <article className='Card__icon'>
@@ -47,9 +54,12 @@ function Card(props){
                               <p className='Card__name'>{props.card.validThru}</p>
                           </aside>
                   </aside>
-              </article>
+              </article> 
           </section>
       )
+    
   }
+
 }
+
 export default Card;
