@@ -1,25 +1,27 @@
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
 import './Home.scss';
 import CardStack from '../components/CardStack/CardStack';
-import Card from '../components/Card/Card';
 import ActiveCard from '../components/ActiveCard/ActiveCard';
-import { useState } from 'react';
 
-function Home(props){
+function Home({setHeading}){
+    const activeCard = useSelector((state)=> {return state.activeCard})
+    const [isActiveCard, setIsActiveCard] = useState(false) 
     const navigate = useNavigate();
+    console.log(typeof activeCard)
 
     useEffect(()=>{
-        props.setHeading('E-WALLET');
+        setHeading('E-WALLET');
     }, [])
 
     function goToAddCard(){
         navigate('/addcard')
     }
-
+   
     return(
         <section className='main'>
-        <ActiveCard />
+        <ActiveCard/>
          <CardStack/>
          <button className='button button__add' onClick={ goToAddCard }>Add a new card</button>
         </section>

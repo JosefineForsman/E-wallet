@@ -16,4 +16,10 @@ function activeCard(value){
         payload: value
     }
 }
-export { addNewCard, removeCard, activeCard }
+function removeActiveCard(value){
+    return{
+        type:'REMOVE_ACTIVE_CARD',
+        payload: value
+    }
+}
+export { addNewCard, removeCard, activeCard, removeActiveCard }

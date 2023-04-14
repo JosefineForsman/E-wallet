@@ -1,15 +1,29 @@
 import './ActiveCard.scss';
 import Chip from '../../assets/chip-dark.svg';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 function ActiveCard(){
     const activeCard = useSelector((state)=> {return state.activeCard})
-    console.log(activeCard)
 
-    // style={{ backgroundColor: changeColor()}
+    function changeColor(){
+        switch (activeCard.vendor) {
+            case 'bitcoin':
+                return '#FFAE34'
+            case 'ninja':
+                return '#222222'
+            case 'blockchain':
+                return '#8B58F9'
+            case 'evil':
+                return '#F33355'
+            default:
+                break;
+        }
+    }
+    
 if(activeCard.name){
     return(
-        <section className='Card' style={{display: activeCard.name ? 'block' : 'none'}} >
+        <section className='Card' 
+        style={{ backgroundColor: changeColor()}} >
         <article className='Card__icon-continer'>
             <img src={Chip} alt="" />
             <article className='Card__icon'>
