@@ -38,7 +38,7 @@ function AddCard({ setHeading }){
         console.log(newCard)
     }
     return(
-        <section>
+        <section className='add-card'>
             <Header/>
 
             <NewCard cardNumber = {cardNumber} 

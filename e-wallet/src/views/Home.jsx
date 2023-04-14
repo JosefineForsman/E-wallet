@@ -21,7 +21,7 @@ function Home(props){
         <section className='main'>
         <ActiveCard />
          <CardStack/>
-         <button className='button' onClick={ goToAddCard }>Add a new card</button>
+         <button className='button button__add' onClick={ goToAddCard }>Add a new card</button>
         </section>
     )
 }

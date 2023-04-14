@@ -1,5 +1,5 @@
 .button{
-    margin-top:10rem;
+    // margin-top:2rem;
     height: 80px;
     width: 382px;
     border-radius: 8px;
@@ -14,10 +14,10 @@
     
 }
 .main{
-    width: 100vw;
-    height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin:0;
+    padding:0;
 }
