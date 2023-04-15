@@ -32,33 +32,44 @@ function Card(props){
 
     function handleChange(event){
         const active = props.card;
-        if(activeCardRedux)
-        if(event.target.checked){
-            dispatch(activeCard(active))
+        
+        if (event.target.checked) {
+        // Kontrollera om något annat kort har en aktiv kryssruta
+
+        const otherCardsWithActive = document.querySelectorAll('.toggle-slider:checked');
+        if (otherCardsWithActive.length > 1) {
+        // event.preventDefault();
+
+        alert('You can only have one active card, please uncheck the active one to make another one active!');
+        event.target.checked = false;
         }
-        else if (event.target.checked == false){
-            dispatch(removeActiveCard(active))
-        }
-        else
-        alert('DU KAN BARA HA ETT AKTIVT KORT!')
+        else {
             
-    }
+        // Triggar activeCard med dispatch för att göra aktuellt kort aktivt.
+         dispatch(activeCard(active));
+         
+        }
+    } else {
+        // Triggar removeActiveCard för att ta bort aktiv status från aktuellt kort
+        dispatch(removeActiveCard(active));
+  }
+    // Update isCardRemoved state based on active state
+    setIsCardRemoved(activeCardRedux !== active.id);
+}
     if(props.card){
+        const isActive = activeCardRedux === props.card.id;
 
       console.log(props.card.vendor);
       return(
         <>
         {isCardRemoved? 
-          <section className='Card' style={{ backgroundColor: changeColor()}}>
+          <section className={`Card ${isActive ? 'active' : ''}`} data-id={props.card.id} style={{ backgroundColor: changeColor()}}>
               <article className='Card__icon-continer'>
                   <img src={Chip} alt="" />
                   <article className='Card__icon'>
                       <img src={`../src/assets/${props.card.vendor}.svg`} />
                       <figure className='Card__remove-btn' onClick= { remove }>X</figure>
-                      <label className="switch">
-                        <input type="checkbox" id="myCheck" onChange={ handleChange }/>
-                        <span className="slider round"></span>
-                        </label>
+                        <input id={`toggle-slider-${props.card.id}`} className="toggle-slider" type="checkbox" onChange={handleChange}/>
                   </article>
               </article>
             <article className='Card__information'>
