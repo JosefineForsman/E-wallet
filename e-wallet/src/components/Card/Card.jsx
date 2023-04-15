@@ -44,7 +44,6 @@ function Card(props){
         event.target.checked = false;
         }
         else {
-            
         // Triggar activeCard med dispatch för att göra aktuellt kort aktivt.
          dispatch(activeCard(active));
          
@@ -53,7 +52,7 @@ function Card(props){
         // Triggar removeActiveCard för att ta bort aktiv status från aktuellt kort
         dispatch(removeActiveCard(active));
   }
-    // Update isCardRemoved state based on active state
+    // Update isCardRemoved state beroende på vad som finns i activeCardRedux.
     setIsCardRemoved(activeCardRedux !== active.id);
 }
     if(props.card){

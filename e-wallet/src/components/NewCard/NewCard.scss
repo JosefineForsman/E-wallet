@@ -1,5 +1,8 @@
 .Card__new-card{
-    margin-bottom:0;
+    margin-bottom:1rem;
+}
+.Card__new-card:hover{
+    transform: none;
 }
 .Card__text--black{
     color:black;

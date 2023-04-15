@@ -22,7 +22,7 @@ function ActiveCard(){
     
 if(activeCard.name){
     return(
-        <section className='Card' 
+        <section className='Card Card__active-card' 
         style={{ backgroundColor: changeColor()}} >
         <article className='Card__icon-continer'>
             <img src={Chip} alt="" />
