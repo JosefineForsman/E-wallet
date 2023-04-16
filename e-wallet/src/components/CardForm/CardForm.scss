@@ -6,7 +6,15 @@
         height: 45px;
         width: 382px;
         border-radius: 8px;
-        border: 1px solid black
+        border: 1px solid black;
+        font-family: PT Mono;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+        text-transform: uppercase;
+
     }
     &__input--small{
         height: 45px;
