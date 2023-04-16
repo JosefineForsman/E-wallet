@@ -8,10 +8,15 @@ function CardForm({
     setVendor
 }){
 
+    const handleCardNumberChange = (e) => {
+        const value = e.target.value.slice(0, 16);
+        setCardNumber(value);
+      };
+
     return(
         <form className='form'>
             <label htmlFor="card-number" className='form__label'>Card number</label>
-            <input type="number" max='16' className='form__input'onChange= {(e) => setCardNumber(e.target.value)}  />
+            <input type="text" className='form__input' onChange={ handleCardNumberChange } maxLength={16} required/>
             <label htmlFor="card-name" className='form__label'>Cardholder name</label>
             <input type="text" className='form__input' onChange= {(e) => setName(e.target.value)}/>
             <section className='form__container'>
