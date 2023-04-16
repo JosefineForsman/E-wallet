@@ -15,7 +15,6 @@ function Card(props) {
     return state.activeCard;
   });
   const dispatch = useDispatch();
-  console.log(activeCardRedux === 1);
 
   function changeColor() {
     switch (props.card.vendor) {
@@ -46,7 +45,7 @@ function Card(props) {
         ".toggle-slider:checked"
       );
       if (otherCardsWithActive.length > 1) {
-        // event.preventDefault();
+        // Om det finns ett aktivt kort skall en alert säga till om det.
 
         alert(
           "You can only have one active card, please uncheck the active one to make another one active!"
@@ -54,19 +53,21 @@ function Card(props) {
         event.target.checked = false;
       } else {
         // Triggar activeCard med dispatch för att göra aktuellt kort aktivt.
+
         dispatch(activeCard(active));
       }
     } else {
       // Triggar removeActiveCard för att ta bort aktiv status från aktuellt kort
+
       dispatch(removeActiveCard(active));
     }
     // Update isCardRemoved state beroende på vad som finns i activeCardRedux.
+
     setIsCardRemoved(activeCardRedux !== active.id);
   }
   if (props.card) {
     const isActive = activeCardRedux === props.card.id;
 
-    console.log(props.card.vendor);
     return (
       <>
         {isCardRemoved ? (
