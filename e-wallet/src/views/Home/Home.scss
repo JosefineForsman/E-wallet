@@ -11,7 +11,11 @@
     text-align: center;
     text-transform: uppercase;
     background-color: white;
-    
+}
+.button__add{
+    margin:0;
+    padding:0;
+    // background-color: green;
 }
 .main{
     display: flex;
@@ -20,4 +24,14 @@
     align-items: center;
     margin:0;
     padding:0;
+}
+.subheading{
+    font-family: Source Sans Pro;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #22222299;
+    text-transform: uppercase;
 }
