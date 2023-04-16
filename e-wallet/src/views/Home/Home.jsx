@@ -19,8 +19,7 @@ function Home({ setHeading }) {
   function goToAddCard() {
     navigate("/addcard");
   }
-  // Varför går det inte att använda en vanlig ternory operator här?
-  // Min h2 displayas inte med det?
+
   return (
     <section className="main">
       {activeCard.length > 0 ? (
