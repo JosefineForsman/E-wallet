@@ -38,6 +38,7 @@ function AddCard({ setHeading }) {
   return (
     <section className="add-card">
       <Header />
+      <h2 className="subheading">New card</h2>
 
       <NewCard
         cardNumber={cardNumber}

@@ -10,6 +10,7 @@ function Home({ setHeading }) {
     return state.activeCard;
   });
   const navigate = useNavigate();
+  console.log(activeCard);
 
   useEffect(() => {
     setHeading("E-WALLET");
@@ -22,10 +23,13 @@ function Home({ setHeading }) {
   // Min h2 displayas inte med det?
   return (
     <section className="main">
-      {Object.values(activeCard).length === 0 ? (
-        <h2>No active cards</h2>
+      {activeCard.length > 0 ? (
+        <div>
+          <h2 className="subheading">Active card</h2>
+          <ActiveCard />
+        </div>
       ) : (
-        <ActiveCard />
+        <h2 className="subheading">You have no active card</h2>
       )}
       <CardStack />
       <button className="button button__add" onClick={goToAddCard}>
