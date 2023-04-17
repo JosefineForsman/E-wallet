@@ -6,7 +6,18 @@ align-items: center;
 margin-top:6rem;
 overflow: scroll;
 margin-bottom:3rem;
+padding:2rem;
+
+scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+  overflow: -moz-scrollbars-none; /* Firefox */
+  overflow-x: scroll; /* Horizontal scrolling */
+  /* Add custom scrollbar */
+  &::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar */
+  }
 }
+
 .card-container__components{
     display: flex;
     flex-direction: column; 

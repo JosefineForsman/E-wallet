@@ -2,7 +2,13 @@ import "./CardForm.scss";
 
 function CardForm({ setCardNumber, setName, setValidThru, setCcv, setVendor }) {
   const handleCardNumberChange = (e) => {
-    const value = e.target.value.slice(0, 16);
+    let value = e.target.value.slice(0, 16);
+
+    if (value.length > 16) {
+      alert("Card number cannot be more than 16 characters");
+      value = value.slice(0, 16);
+    }
+
     setCardNumber(value);
   };
 
@@ -12,10 +18,16 @@ function CardForm({ setCardNumber, setName, setValidThru, setCcv, setVendor }) {
         Card number
       </label>
       <input
-        type="text"
         className="form__input"
         onChange={handleCardNumberChange}
         maxLength={16}
+        type="text"
+        onInput={(event) => {
+          if (!/^[0-9]+$/.test(event.target.value)) {
+            alert("Card number can only contain numbers");
+            event.target.value = event.target.value.replace(/[^0-9]/g, "");
+          }
+        }}
         required
       />
       <label htmlFor="card-name" className="form__label">

@@ -40,29 +40,24 @@ function Card(props) {
 
     if (event.target.checked) {
       // Kontrollera om något annat kort har en aktiv kryssruta
-
-      const otherCardsWithActive = document.querySelectorAll(
+      const activeCheckboxes = document.querySelectorAll(
         ".toggle-slider:checked"
       );
-      if (otherCardsWithActive.length > 1) {
+      if (activeCheckboxes.length > 1) {
         // Om det finns ett aktivt kort skall en alert säga till om det.
-
         alert(
           "You can only have one active card, please uncheck the active one to make another one active!"
         );
         event.target.checked = false;
       } else {
         // Triggar activeCard med dispatch för att göra aktuellt kort aktivt.
-
         dispatch(activeCard(active));
       }
     } else {
       // Triggar removeActiveCard för att ta bort aktiv status från aktuellt kort
-
       dispatch(removeActiveCard(active));
     }
     // Update isCardRemoved state beroende på vad som finns i activeCardRedux.
-
     setIsCardRemoved(activeCardRedux !== active.id);
   }
   if (props.card) {
