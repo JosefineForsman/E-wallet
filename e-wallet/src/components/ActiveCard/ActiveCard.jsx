@@ -28,7 +28,7 @@ function ActiveCard() {
         className="Card Card__active-card"
         style={{ backgroundColor: changeColor() }}
       >
-        <article className="Card__icon-continer">
+        <article className="Card__icon-continer--active-card">
           <img src={Chip} alt="" />
           <article className="Card__icon">
             <img src={`../src/assets/${activeCard.vendor}.svg`} />

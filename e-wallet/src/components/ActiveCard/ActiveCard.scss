@@ -1,15 +1,6 @@
-.Card__remove-btn{
+.Card__icon-continer--active-card{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    width:1.5rem;
-    height:1.5rem;
-    background-color: red;
-    margin-top:-2rem;
-    margin-right:-1rem;
-}
-.Card__active-card:hover{
-        transform: none;
-        box-shadow: none;
+    justify-content: space-between;
+    margin:.5rem;
+    padding:1rem;
 }

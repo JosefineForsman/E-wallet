@@ -1,18 +1,16 @@
 .card-container{
-height: 500px;
+min-height: 400px;
+// flex-wrap: wrap;
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top:6rem;
-overflow: scroll;
+gap:20px;
+margin-top:8rem;
+padding: 1rem;
+overflow-y: auto;
 margin-bottom:3rem;
-padding:2rem;
-
 scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE 10+ */
-  overflow: -moz-scrollbars-none; /* Firefox */
-  overflow-x: scroll; /* Horizontal scrolling */
-  /* Add custom scrollbar */
   &::-webkit-scrollbar {
     display: none; /* Hide default scrollbar */
   }
@@ -20,8 +18,10 @@ scrollbar-width: none; /* Firefox */
 
 .card-container__components{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column; 
-    height: 100%;
+    // height: 100%;
 }
 ul.card-container__components{
     display: flex;

@@ -39,17 +39,7 @@ function Card(props) {
     const active = props.card;
 
     if (event.target.checked) {
-      // Kontrollera om något annat kort har en aktiv kryssruta
-      const activeCheckboxes = document.querySelectorAll(
-        ".toggle-slider:checked"
-      );
-      if (activeCheckboxes.length > 1) {
-        // Om det finns ett aktivt kort skall en alert säga till om det.
-        alert(
-          "You can only have one active card, please uncheck the active one to make another one active!"
-        );
-        event.target.checked = false;
-      } else {
+      if (activeCardRedux) {
         // Triggar activeCard med dispatch för att göra aktuellt kort aktivt.
         dispatch(activeCard(active));
       }
@@ -71,20 +61,26 @@ function Card(props) {
             data-id={props.card.id}
             style={{ backgroundColor: changeColor() }}
           >
-            <article className="Card__icon-continer">
-              <img src={Chip} alt="" />
-              <article className="Card__icon">
-                <img src={`../src/assets/${props.card.vendor}.svg`} />
+            <article className="Card__icon Card__icon--card">
+              <section className="Card__function-icons">
+                <label className="rad-label">
+                  <input
+                    type="radio"
+                    className="rad-input"
+                    name="radio"
+                    onChange={handleChange}
+                  />
+                  <div className="rad-design"></div>
+                  <div className="subheading subheading--white">Active</div>
+                </label>
                 <figure className="Card__remove-btn" onClick={remove}>
                   X
                 </figure>
-                <input
-                  id={`toggle-slider-${props.card.id}`}
-                  className="toggle-slider"
-                  type="checkbox"
-                  onChange={handleChange}
-                />
-              </article>
+              </section>
+            </article>
+            <article className="Card__icon-continer">
+              <img src={Chip} alt="" />
+              <img src={`../src/assets/${props.card.vendor}.svg`} />
             </article>
             <article className="Card__information">
               <p className="Card__text">{props.card.cardNumber}</p>

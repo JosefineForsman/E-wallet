@@ -7,3 +7,10 @@
 .Card__text--black{
     color:black;
 }
+.Card__icon-continer--new-card{
+    display: flex;
+    justify-content: space-between;
+    margin:.5rem;
+    padding:1rem;
+}
+
