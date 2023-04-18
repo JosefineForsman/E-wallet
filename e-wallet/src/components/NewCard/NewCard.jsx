@@ -4,25 +4,25 @@ import Chip from "../../assets/chip-dark.svg";
 
 function NewCard({ cardNumber, name, validThru }) {
   return (
-    <section className="Card Card__new-card">
-      <article className="Card__icon-continer--new-card">
+    <section className="card card__new-card">
+      <article className="card__icon-continer--new-card">
         <img src={Chip} alt="" />
-        <article className="Card__icon Card__icon--new-card">
+        <article className="card__icon card__icon--new-card">
           <img src={Bitcoin} />
         </article>
       </article>
-      <article className="Card__information">
-        <p className="Card__text Card__text--black">{cardNumber}</p>
-        <aside className="Card__information-container">
-          <aside className="Card_name-container">
-            <p className="Card__label-name Card__text--black">
+      <article className="card__information">
+        <p className="card__text card__text--black">{cardNumber}</p>
+        <aside className="card__information-container">
+          <aside className="card_name-container">
+            <p className="card__label-name card__text--black">
               cardholder name
             </p>
-            <p className="Card__name Card__text--black">{name}</p>
+            <p className="card__name card__text--black">{name}</p>
           </aside>
-          <aside className="Card_valid">
-            <p className="Card__label-name Card__text--black">Valid thru</p>
-            <p className="Card__name Card__text--black">{validThru}</p>
+          <aside className="card_valid">
+            <p className="card__label-name card__text--black">Valid thru</p>
+            <p className="card__name card__text--black">{validThru}</p>
           </aside>
         </aside>
       </article>

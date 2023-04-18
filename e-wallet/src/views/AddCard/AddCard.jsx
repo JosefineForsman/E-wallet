@@ -1,6 +1,5 @@
 import "./AddCard.scss";
 import Header from "../../components/Header/Header";
-import Card from "../../components/Card/Card";
 import CardForm from "../../components/CardForm/CardForm";
 import NewCard from "../../components/NewCard/NewCard";
 import { useState, useEffect } from "react";

@@ -5,17 +5,16 @@
     font-family: PT Mono;
     font-size: 22px;
     font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 0em;
     text-align: center;
     text-transform: uppercase;
     background-color: white;
+
+    &__add{
+        margin:0;
+        padding:0;
+    }
 }
-.button__add{
-    margin:0;
-    padding:0;
-}
-.main{
+.home{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -27,8 +26,6 @@
     font-family: Source Sans Pro;
     font-size: 12px;
     font-weight: 600;
-    line-height: 15px;
-    letter-spacing: 0em;
     text-align: center;
     color: #22222299;
     text-transform: uppercase;

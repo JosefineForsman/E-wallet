@@ -21,7 +21,7 @@ function Home({ setHeading }) {
   }
 
   return (
-    <section className="main">
+    <section className="home">
       {activeCard.length > 0 ? (
         <div>
           <h2 className="subheading">Active card</h2>
