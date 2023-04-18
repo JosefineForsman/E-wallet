@@ -94,7 +94,6 @@
       box-shadow: none;
 }
 &__function-icons{
-  // background-color: rgb(213, 171, 171);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -103,11 +102,9 @@
 }
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 400px){
   .Card {
-      // height: auto;
-      width: 330px;
-
+      width: 360px;
       &__name{
         font-size: 16px;
       }
@@ -120,17 +117,19 @@
       &__name-container{
         flex-direction: column;
       }
-      &__information-container{
-        // flex-direction: column;
-      }
       &:hover{
         transform: translateY(-20px);
         z-index: 1;
         box-shadow: 0px 0px 20px rgba(29, 29, 65, 0.5);
       }
     }
+    @media only screen and (max-width: 500px){
+      .Card{
+          width:310px;
+      }
+  }
 }
-.rad-label {
+.Card__radio-label {
   display: flex;
   align-items: center;
 
@@ -143,7 +142,7 @@
   background: hsla(0, 14%, 83%, 0.484);
 }
 
-.rad-input {
+.Card__radio-input {
   position: absolute;
   left: 0;
   top: 0;
@@ -153,7 +152,7 @@
   z-index: -1;
 }
 
-.rad-design {
+.Card__radio-design {
   width: 15px;
   height: 15px;
   border-radius: 100px;
@@ -161,7 +160,7 @@
   position: relative;
 }
 
-.rad-design::before {
+.Card__radio-design::before {
   content: '';
 
   display: inline-block;
@@ -174,7 +173,7 @@
   transition: .3s;
 }
 
-.rad-input:checked+.rad-design::before {
+.Card__radio-input:checked+.Card__radio-design::before {
   transform: scale(0);
 }
 
@@ -188,6 +187,6 @@
   transition: .3s;
 }
 
-.rad-input:checked~.rad-text {
+.Card__radio-input:checked~.Card__radio-text {
   color: hsl(0, 0%, 40%);
 }

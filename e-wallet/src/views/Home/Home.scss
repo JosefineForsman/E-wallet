@@ -33,3 +33,13 @@
     color: #22222299;
     text-transform: uppercase;
 }
+@media only screen and (max-width: 500px){
+    .button__add{
+        width:330px;
+    }
+}
+@media only screen and (max-width: 300px){
+    .button__add{
+        width:310px;
+    }
+}
