@@ -1,66 +1,63 @@
 import "./CardForm.scss";
 
 function CardForm({ setCardNumber, setName, setValidThru, setCcv, setVendor }) {
+  // Hanterar ändringar i kortnumret och kontrollerar att endast siffror har angivits.
+  // Rensar eventuella icke-siffror från input-fältet och uppdaterar
+  // sedan state med det rensade kortnumret.
   function handleCardNumberChange(event) {
     let cardNumberInput = event.target.value;
 
     if (!/^[0-9]*$/.test(cardNumberInput)) {
-      // meddela användaren att man endast får ange siffror
       alert("Card number can only contain numbers");
-      // ta bort icke-siffror från input-fältet
       cardNumberInput = cardNumberInput.replace(/[^0-9]/g, "");
-      // uppdatera state med rensad input
       event.target.value = cardNumberInput;
     }
-    // uppdatera state med input
     setCardNumber(cardNumberInput);
   }
 
+  // Hanterar ändringar i namn-input-fältet och kontrollerar att endast
+  // alfabetiska tecken och mellanslag har angivits. Rensar eventuella
+  // icke-alfabetiska tecken och mellanslag från input-fältet och
+  // uppdaterar sedan state med det rensade namnet.
   function handleNameInput(event) {
     let nameInput = event.target.value;
-    // För att matcha endast alfabetiska tecken och mellanslag
     const onlyAlphabetic = /^[a-zA-Z ]*$/;
+
     if (!onlyAlphabetic.test(nameInput)) {
-      // meddela användaren att man endast får ange alfabetiska tecken och mellanslag
       alert("Only alphabetic characters and spaces!");
-      // ta bort icke-alfabetiska tecken och mellanslag från input-fältet
       nameInput = nameInput.replace(/[^a-zA-Z ]/g, "");
-      // uppdatera state med rensad input
       setName(nameInput);
-      // uppdatera input-fältet med rensad input
       event.target.value = nameInput;
     } else {
-      // uppdatera state med input
       setName(nameInput);
     }
   }
+
+  // Hanterar ändringar i utgångsdatum-input-fältet och kontrollerar
+  // att endast siffror och '/' har angivits. Rensar eventuella
+  // icke-siffror och '/' från input-fältet och uppdaterar sedan state med det
   function handleValidThruChange(event) {
     let validThruInput = event.target.value;
 
     if (!/^[0-9/]*$/.test(validThruInput)) {
-      // meddela användaren att man endast får ange siffror och /
       alert("Valid thru can only contain numbers and /");
-      // ta bort icke-siffror och / från input-fältet
       validThruInput = validThruInput.replace(/[^0-9/]/g, "");
-      // uppdatera input-fältet med rensad input
       event.target.value = validThruInput;
     }
-
-    // uppdatera state med input
     setValidThru(validThruInput);
   }
+
+  // Hanterar ändringar i CCV-input-fältet och kontrollerar att endast
+  // siffror har angivits. Rensar eventuella icke-siffror från
+  // input-fältet och uppdaterar sedan state med det rensade CCV-numret.
   function handleCcvChange(event) {
     let ccvInput = event.target.value;
 
     if (!/^[0-9]*$/.test(ccvInput)) {
-      // meddela användaren att man endast får ange siffror
       alert("CCV can only contain numbers");
-      // ta bort icke-siffror från input-fältet
       ccvInput = ccvInput.replace(/[^0-9]/g, "");
-      // uppdatera state med rensad input
       event.target.value = ccvInput;
     }
-    // uppdatera state med input
     setCcv(ccvInput);
   }
 
