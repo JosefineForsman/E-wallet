@@ -105,7 +105,6 @@ function CardForm({ setCardNumber, setName, setValidThru, setCcv, setVendor }) {
           <input
             type="text"
             className="form__input form__input--small"
-            pattern="^(0[1-9]|1[0-2])\/([0-9]{2})$"
             maxLength={5}
             placeholder="MM/YY"
             onChange={handleValidThruChange}
@@ -125,7 +124,6 @@ function CardForm({ setCardNumber, setName, setValidThru, setCcv, setVendor }) {
           <input
             placeholder="XXX"
             type="text"
-            pattern="\d{1,3}"
             maxLength={3}
             className="form__input form__input--small"
             onChange={handleCcvChange}
