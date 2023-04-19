@@ -1,6 +1,5 @@
 .card-container{
 min-height: 400px;
-// flex-wrap: wrap;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -9,10 +8,11 @@ margin-top:8rem;
 padding: 1rem;
 overflow-y: auto;
 margin-bottom:3rem;
-scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-  &::-webkit-scrollbar {
-    display: none; /* Hide default scrollbar */
+scrollbar-width: none;
+-ms-overflow-style: none; 
+  
+&::-webkit-scrollbar {
+    display: none; 
   }
 }
 
@@ -21,7 +21,6 @@ scrollbar-width: none; /* Firefox */
     align-items: center;
     justify-content: center;
     flex-direction: column; 
-    // height: 100%;
 }
 ul.card-container__components{
     display: flex;

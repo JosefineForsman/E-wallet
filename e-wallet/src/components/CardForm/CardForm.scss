@@ -4,7 +4,7 @@
     max-width: 382px;
     width: 100%;
     margin:1rem;
-    // width: 100%;
+ 
     &__input{
         margin-bottom:0.5rem;
         height: 45px;
@@ -44,7 +44,6 @@
     }
     
 }
-/* Styles for smaller screens */
 @media only screen and (max-width: 600px) {
     .form{
         width: 360px
@@ -58,7 +57,7 @@
     }
 
     .form__box{
-        flex-basis: 50%; /* Allow box to take up half width on larger screens */
+        flex-basis: 50%; 
     }
     .button{
         width: 95%;
