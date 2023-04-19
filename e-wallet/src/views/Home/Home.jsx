@@ -10,7 +10,6 @@ function Home({ setHeading }) {
     return state.activeCard;
   });
   const navigate = useNavigate();
-  console.log(activeCard);
 
   useEffect(() => {
     setHeading("E-WALLET");

@@ -32,7 +32,6 @@ function AddCard({ setHeading }) {
     };
     dispatch(addNewCard(newCard));
     navigate("/");
-    console.log(newCard);
   }
   return (
     <section className="add-card">
